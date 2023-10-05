@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   name = 'pranav K';
+  key={
+    name: "hari",
+    age: 30
+  }
+  sayHello(){
+    return "welcome "+ this.key.name; 
+  }
 }
