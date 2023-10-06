@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  name = 'pranav K';
+  name = 'pranav';
+  isDisabled : boolean = false ;
   key={
     name: "hari",
     age: 30
@@ -14,4 +15,4 @@ export class HomeComponent {
   sayHello(){
     return "welcome "+ this.key.name; 
   }
-}
+}   
