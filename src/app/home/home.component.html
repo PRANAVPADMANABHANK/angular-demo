@@ -1,6 +1,14 @@
-<!-- <input type="text" [disabled] = "isDisabled" [value]="name"> -->
+<input type="text" class="form-control" [disabled] = "isDisabled" [value]="name"> 
 
 
-<h1 class="danger">Welcome {{name}}</h1>
-<h2 class="success">hello world </h2><h1>whass up</h1>
-<h1 id="hello">whass up</h1>
+<input type="text" class="form-control" disabled = {{isDisabled}} [value]="name">
+
+<input type="text" class="form-control" [(ngModel)]="string">
+<button class="btn btn-success" [disabled] = 'string === "" '>Reset Data</button>
+{{string}}
+
+
+<h3 appGreenbackground>It Gives Green Background</h3>
+
+<button class="btn btn-danger" (click)="changeServer()">Click</button>
+<p>{{server}}</p>

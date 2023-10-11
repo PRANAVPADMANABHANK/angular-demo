@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  name = 'pranav';
+  name = 'hello';
+  string="";
+  server="server not created"
   isDisabled : boolean = false ;
   key={
     name: "hari",
@@ -14,5 +16,9 @@ export class HomeComponent {
   }
   sayHello(){
     return "welcome "+ this.key.name; 
+  }
+  
+  changeServer(){
+    this.server="server created"
   }
 }   
