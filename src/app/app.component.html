@@ -1,1 +1,7 @@
+
+<!-- <app-list-profile></app-list-profile> -->
+<h1 *ngIf="isDisabled then thenBlock else elseBlock" class="c1"></h1>
+<ng-template #thenBlock>thenBlock</ng-template>
+<ng-template #elseBlock><h1>elseBlock</h1></ng-template>
 <app-home></app-home>
+<router-outlet></router-outlet>
