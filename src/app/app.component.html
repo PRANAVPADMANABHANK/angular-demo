@@ -1,4 +1,7 @@
 <!-- <app-list-profile></app-list-profile> -->
+
+                                    <!-- *ngIf and *ngFor hands own practices -->
+
 <h1 *ngIf="isDisabled && msgFlag; else elseBlock" class="c1">hello</h1>
 <ng-template #thenBlock>thenBlock</ng-template>
 <ng-template #elseBlock><h1>elseBlock</h1></ng-template>
@@ -25,5 +28,33 @@
     </li>
   </ul>
 </div>
+
+                                <!-- *ngSwitch , *ngSwitchCase , *ngSwitchDefault -->
+                                 
+<h2>Learning ngSwitch</h2>
+
+<div [ngSwitch]="superPower">
+    <div *ngSwitchCase="'spiderMan'">Display spiderman superPower</div>
+    <div *ngSwitchCase="'superMan'">Display superMan superPower</div>
+    <div *ngSwitchCase="'batMan'">Display batMan superPower</div>
+    <div *ngSwitchCase="'hollowMan'">Display hollowMan superPower</div>
+    <div *ngSwitchDefault>none of the above</div>
+</div>
+
+<div [ngSwitch]="tax">
+    <div *ngSwitchCase="10"> tax more than 10</div>
+    <div *ngSwitchCase="30">tax less than 10</div>
+    <div *ngSwitchDefault>ngSwithDefault works</div>
+</div>
+
+                                <!-- attribute directive [ngStyle] and [ngClass] -->
+
+<div [ngStyle]="{'background-color':'green', 'color':'white'}">This is green div element</div>
+<div [ngStyle]="{'background-color':violet}">This is violet div element</div>
+<div [ngStyle]="{'color':textColor=='blue'? 'blue':'red'}">woooo</div>
+
+<div [ngClass]="'c1 c2'">This is ngClass example</div>
+<div [ngClass]="getClass()">return ngClass using method</div>
+
 <app-home></app-home>
 <router-outlet></router-outlet>
