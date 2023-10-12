@@ -1,7 +1,29 @@
-
 <!-- <app-list-profile></app-list-profile> -->
-<h1 *ngIf="isDisabled then thenBlock else elseBlock" class="c1"></h1>
+<h1 *ngIf="isDisabled && msgFlag; else elseBlock" class="c1">hello</h1>
 <ng-template #thenBlock>thenBlock</ng-template>
 <ng-template #elseBlock><h1>elseBlock</h1></ng-template>
+<ul>
+  <li *ngFor="let contact of contacts; index as i">
+    <div *ngIf="f" style="background-color: yellow">first heading</div>
+    <div>{{ i }} {{ contact.firstName }}</div>
+  </li>
+</ul>
+<ol>
+  <li *ngFor="let contact of contacts">{{ contact.lastName }}</li>
+</ol>
+
+<div><h3>last datas</h3></div>
+<div>
+  <ul>
+    <li *ngFor="let contact of contacts; even as e; odd as o; index as i">
+      <div *ngIf="e" style="background-color: rgba(128, 128, 128, 0.403)">
+        {{ i }} {{ contact.firstName }} even=>{{ e }} and odd=>{{ o }}
+      </div>
+      <div *ngIf="o" style="background-color: white;">
+        {{i}} {{contact.firstName}}
+    </div>
+    </li>
+  </ul>
+</div>
 <app-home></app-home>
 <router-outlet></router-outlet>
