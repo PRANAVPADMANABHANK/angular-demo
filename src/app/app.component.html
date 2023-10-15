@@ -56,5 +56,26 @@
 <div [ngClass]="'c1 c2'">This is ngClass example</div>
 <div [ngClass]="getClass()">return ngClass using method</div>
 
+
+<table border="3">
+  <thead>
+    <tr>
+      <th>Student Id</th>
+      <th>Student Name</th>
+      <th>Mark 1</th>
+      <th>Mark 2</th>
+      <th>Mark 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of studentList">
+      <td>{{student.id}}</td>
+      <td>{{student.name}}</td>
+      <td>{{student.mark1}}</td>
+      <td>{{student.mark2}}</td>
+      <td>{{student.mark3}}</td>
+    </tr>
+  </tbody>
+</table>
 <app-home></app-home>
 <router-outlet></router-outlet>
