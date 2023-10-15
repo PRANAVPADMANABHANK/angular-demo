@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StudentService } from 'src/app/student.service';
 
 @Component({
   selector: 'app-leads-grid',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class LeadsGridComponent {
 
+  constructor(public studentService: StudentService){}
 }

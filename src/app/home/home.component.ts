@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentService } from '../student.service';
 
 @Component({
   selector: 'app-home',
@@ -14,10 +15,8 @@ export class HomeComponent implements OnInit {
     name: "hari",
     age: 30
   }
-
-  ngOnInit(){
-    console.log("This OnInit from home component")
-  }
+  
+  
   
   sayHello(){
     return "welcome "+ this.key.name; 
@@ -25,5 +24,18 @@ export class HomeComponent implements OnInit {
   
   changeServer(){
     this.server="server created"
+  }
+  
+  studentList:any=[]
+  constructor(private studentService: StudentService){
+    console.log("home constructor")
+  }
+
+  ngOnInit():void{
+    this.studentList = this.studentService.studentList
+  }
+
+  calculate(student:any){
+    this.studentService.calculateTotal(student)
   }
 }   

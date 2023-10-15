@@ -2,7 +2,7 @@
 
                                     <!-- *ngIf and *ngFor hands own practices -->
 
-<h1 *ngIf="isDisabled && msgFlag; else elseBlock" class="c1">hello</h1>
+<h1 *ngIf="isDisabled && msgFlag; else elseBlock" class="c1">WELCOME</h1>
 <ng-template #thenBlock>thenBlock</ng-template>
 <ng-template #elseBlock><h1>elseBlock</h1></ng-template>
 <ul>
@@ -57,25 +57,19 @@
 <div [ngClass]="getClass()">return ngClass using method</div>
 
 
-<table border="3">
-  <thead>
-    <tr>
-      <th>Student Id</th>
-      <th>Student Name</th>
-      <th>Mark 1</th>
-      <th>Mark 2</th>
-      <th>Mark 3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let student of studentList">
-      <td>{{student.id}}</td>
-      <td>{{student.name}}</td>
-      <td>{{student.mark1}}</td>
-      <td>{{student.mark2}}</td>
-      <td>{{student.mark3}}</td>
-    </tr>
-  </tbody>
-</table>
-<app-home></app-home>
+
+<app-home></app-home> 
+<app-home2></app-home2><br><br>
+
+
+<div class="container">
+  <input type="text" #inputEl>
+  <button class="btn btn-primary" (click)="onBtnClicked(inputEl)">Submit</button>
+  <app-demo [message]="inputVal" *ngIf="!toDestroy">
+    <!-- <p>This is projected content</p> -->
+    <p>User has entered following text: {{inputVal}}</p>
+  </app-demo>
+  <br><br>
+  <button class="btn btn-danger" (click)="DestroyComponent()">Show / Hide</button>
+</div>
 <router-outlet></router-outlet>

@@ -14,3 +14,8 @@
 <p>{{server}}</p>
 
  -->
+
+<h3><u>Student Names</u></h3>
+<ul *ngFor="let student of studentList">
+    <li style="cursor: pointer;" (click)="calculate(student)">{{student.name}}</li>
+</ul>
