@@ -7,6 +7,9 @@ import { StudentService } from '../student.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+
+  
+
   name = 'hello';
   string="";
   server="server not created"
@@ -16,7 +19,9 @@ export class HomeComponent implements OnInit {
     age: 30
   }
   
-  
+  constructor(private studentService: StudentService){
+    console.log("home constructor")
+  }
   
   sayHello(){
     return "welcome "+ this.key.name; 
@@ -27,9 +32,7 @@ export class HomeComponent implements OnInit {
   }
   
   studentList:any=[]
-  constructor(private studentService: StudentService){
-    console.log("home constructor")
-  }
+ 
 
   ngOnInit():void{
     this.studentList = this.studentService.studentList
