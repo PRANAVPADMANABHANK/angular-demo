@@ -1,14 +1,19 @@
-import { Component, Output } from '@angular/core';
+import { Component, Output, ViewChild, AfterViewInit } from '@angular/core';
+import { ChildComponent } from './child/child.component';
 
 @Component({
   selector: 'app-parent',
   templateUrl: './parent.component.html',
   styleUrls: ['./parent.component.css']
 })
-export class ParentComponent {
+export class ParentComponent implements AfterViewInit {
 
 
-  chilDataReceived !: string;
+
+  childDataReceived !: string;
+  message : string = ""
+
+  @ViewChild(ChildComponent) child !: ChildComponent;
 
   Ename: string = "Hari Kalathingal" 
   Obj = {
@@ -17,12 +22,18 @@ export class ParentComponent {
     place : "Kannur"
   }
 
+  ngAfterViewInit(): void {
+    this.message = this.child.childData;
+    console.log(this.child.childData,"this.child.childData");
+    
+  }
+  
   ngOnInit(){
 
   }
 
   ReceiveData(event: string){
     console.log(event,"event got")
-    this.chilDataReceived = event
+    this.childDataReceived = event
   }
 }
