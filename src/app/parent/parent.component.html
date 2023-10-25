@@ -1,5 +1,9 @@
 <p>parent works!</p>
 
-<app-child [EmployeeName]="Ename" [Object]="Obj"></app-child>
+<!-- <app-child [EmployeeName]="Ename" [Object]="Obj"></app-child> -->
+
+<app-child (childStringData)="ReceiveData($event)"></app-child>
+
+<h3>{{childDa}}</h3>
 
 

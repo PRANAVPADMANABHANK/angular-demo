@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -7,7 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ChildComponent implements OnInit{
 
-  
+  childData : string = "Data from child component" 
+
+  @Output() childStringData : EventEmitter<string> = new EventEmitter();
 
   @Input() EmployeeName !: string; //it means that this EmployeeName can receives data from the parent.
   @Input() Object : any;
@@ -18,5 +20,9 @@ export class ChildComponent implements OnInit{
   ngOnInit(){
     console.log(this.EmployeeName, "EmployeeName")
     console.log(JSON.stringify(this.Object),"This is the Object")
+  }
+
+  SendData(){
+    this.childStringData.emit(this.childData)
   }
 }

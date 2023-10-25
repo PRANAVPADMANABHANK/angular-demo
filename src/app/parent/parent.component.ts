@@ -8,6 +8,8 @@ import { Component, Output } from '@angular/core';
 export class ParentComponent {
 
 
+  chilDataReceived !: string;
+
   Ename: string = "Hari Kalathingal" 
   Obj = {
     name: "Rishad",
@@ -16,6 +18,11 @@ export class ParentComponent {
   }
 
   ngOnInit(){
-    
+
+  }
+
+  ReceiveData(event: string){
+    console.log(event,"event got")
+    this.chilDataReceived = event
   }
 }
