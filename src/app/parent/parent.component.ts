@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 
 @Component({
   selector: 'app-parent',
@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class ParentComponent {
 
+
+  Ename: string = "Hari Kalathingal" 
+  Obj = {
+    name: "Rishad",
+    age : 24,
+    place : "Kannur"
+  }
+
+  ngOnInit(){
+    
+  }
 }
