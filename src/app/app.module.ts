@@ -9,6 +9,8 @@ import { Home2Component } from './home2/home2.component';
 import { GreenbackgroundDirective } from './greenbackground.directive';
 import { ProfileModule } from './profile/profile.module';
 import { DemoComponent } from './demo/demo.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './parent/child/child.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { DemoComponent } from './demo/demo.component';
     Home2Component,
     GreenbackgroundDirective,
     DemoComponent,
+    ParentComponent,
+    ChildComponent,
   ],
   imports: [
     BrowserModule,
