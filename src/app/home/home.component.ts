@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   }
   
   constructor(private studentService: StudentService){
-    console.log("home constructor")
+    // console.log("home constructor")
   }
   
   sayHello(){

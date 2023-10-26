@@ -1,5 +1,6 @@
 import { Component, Output, ViewChild, AfterViewInit } from '@angular/core';
 import { ChildComponent } from './child/child.component';
+import {ChangeDetectorRef} from '@angular/core';
 
 @Component({
   selector: 'app-parent',
@@ -22,14 +23,19 @@ export class ParentComponent implements AfterViewInit {
     place : "Kannur"
   }
 
+  constructor(private cd: ChangeDetectorRef){
+
+  }
+
   ngAfterViewInit(): void {
     this.message = this.child.childData;
-    console.log(this.child.childData,"this.child.childData");
+    this.cd.detectChanges()
+    console.log(this.child.childData, "childData received");
     
   }
   
   ngOnInit(){
-
+    // console.log(this.child.childData, "child Data received in the parent component")
   }
 
   ReceiveData(event: string){

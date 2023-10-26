@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
   
 
   ngOnInit(){
-    console.log("I am from onInit of app.component")
+    // console.log("I am from onInit of app.component")
   }
 
   getClass(){
@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
   }
 
   constructor(){
-    console.log("app constructor")
+    // console.log("app constructor")
   }
   studentList=[
     {id: 1, name: 'Anas', mark1: 40, mark2: 50, mark3: 60},

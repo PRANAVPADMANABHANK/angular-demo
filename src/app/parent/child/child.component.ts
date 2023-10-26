@@ -18,8 +18,8 @@ export class ChildComponent implements OnInit{
 
   }
   ngOnInit(){
-    console.log(this.EmployeeName, "EmployeeName")
-    console.log(JSON.stringify(this.Object),"This is the Object")
+    // console.log(this.EmployeeName, "EmployeeName")
+    // console.log(JSON.stringify(this.Object),"This is the Object")
   }
 
   SendData(){
