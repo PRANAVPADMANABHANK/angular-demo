@@ -3,14 +3,15 @@
 <!-- <h4>{{Object.name}} and age is: {{Object.age}} from {{Object.place}}</h4> -->
 
 <button class="btn btn-primary" (click)="SendData()">Send Data to Parent</button>
-<button class="btn btn-success" (click)="onlyOdd = !onlyOdd">Odd/Even</button>
+<button class="btn btn-success" (click)="onlyOdd = !onlyOdd" *ngIf="onlyOdd">Make it Odd</button>
+<button class="btn btn-success" (click)="onlyOdd = !onlyOdd" *ngIf="!onlyOdd">Make it Even</button>
 <div *ngIf="!onlyOdd ">
-    <ul *ngFor="let oddNumber of oddNumbers">
+    <ul *ngFor="let oddNumber of oddNumbers" [ngClass]="{odd: oddNumber}" >
         <li>{{oddNumber}}</li>
     </ul>
 </div>
-<div *ngIf="onlyOdd">
-    <ul *ngFor="let evenNumber of evenNumbers">
+<div *ngIf="onlyOdd" >
+    <ul *ngFor="let evenNumber of evenNumbers" [ngStyle]="{'background-color':'grey'}">
         <li>{{evenNumber}}</li>
     </ul>
 </div>
