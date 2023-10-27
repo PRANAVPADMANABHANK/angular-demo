@@ -12,3 +12,5 @@ export class BasicHighlightDirective implements OnInit {
         this.elementRef.nativeElement.style.backgroundColor = 'green'
     }
 }
+
+//renderer class is used to manipulate the dom element without changing the actual dom.

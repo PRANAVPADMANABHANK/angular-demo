@@ -12,6 +12,7 @@ import { ChildComponent } from './parent/child/child.component';
 import { SampleDirectiveDirective } from './sample-directive.directive';
 import { DemoDirectiveDirective } from './basic-highlight/demo-directive.directive';
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
+import { BetterHighlightDirective } from './basic-highlight/better-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { BasicHighlightDirective } from './basic-highlight/basic-highlight.direc
     SampleDirectiveDirective,
     DemoDirectiveDirective,
     BasicHighlightDirective,
+    BetterHighlightDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
