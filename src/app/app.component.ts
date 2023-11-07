@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,8 @@ export class AppComponent implements OnInit {
 
   inputVal: String = ''
   toDestroy : boolean=false;
+
+  reactiveForms: FormGroup
  
 
   DestroyComponent(){
@@ -29,7 +32,19 @@ export class AppComponent implements OnInit {
   
 
   ngOnInit(){
-    // console.log("I am from onInit of app.component")
+    this.reactiveForms = new FormGroup({
+      firstName: new FormControl(null),
+      lastName: new FormControl(null),
+      userName: new FormControl(null),
+      city: new FormControl(null),
+      state: new FormControl(null),
+      zip: new FormControl(null),
+      terms: new FormControl(null)
+    })
+  }
+
+  OnSubmit(){
+    console.log(this.reactiveForms, "reactive forms got")
   }
 
   getClass(){

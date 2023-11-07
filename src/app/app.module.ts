@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -13,6 +13,8 @@ import { SampleDirectiveDirective } from './sample-directive.directive';
 import { DemoDirectiveDirective } from './basic-highlight/demo-directive.directive';
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './basic-highlight/better-highlight.directive';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +29,10 @@ import { BetterHighlightDirective } from './basic-highlight/better-highlight.dir
     DemoDirectiveDirective,
     BasicHighlightDirective,
     BetterHighlightDirective,
+    ContactUsComponent,
+    AboutUsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

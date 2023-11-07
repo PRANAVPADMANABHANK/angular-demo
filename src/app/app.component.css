@@ -10,3 +10,18 @@
 .c3{
     color: rgb(202, 10, 115);
 }
+
+.main-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aquamarine;
+}
+.ul-div{
+    display: flex;
+    list-style: none;
+}
+.ul-div>li{
+    padding: 5px;
+    cursor: pointer;
+}

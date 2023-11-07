@@ -1,6 +1,22 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="main-div">
+    <div>
+      Angular Routing
+    </div>
+    <div>
+      <ul class="ul-div">
+        <li [routerLink]="['/Home']">Home</li>
+        <li [routerLink]="['/About-us']">About us</li>
+        <li [routerLink]="['/Contact-us']">Contact us</li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
 <!-- <app-list-profile></app-list-profile> -->
 
-                                    <!-- *ngIf and *ngFor hands own practices -->
+<!-- *ngIf and *ngFor hands own practices -->
 
 <h1 *ngIf="isDisabled && msgFlag; else elseBlock" class="c1">WELCOME</h1>
 <ng-template #thenBlock>thenBlock</ng-template>
@@ -22,56 +38,106 @@
       <div *ngIf="e" style="background-color: rgba(128, 128, 128, 0.403)">
         {{ i }} {{ contact.firstName }} even=>{{ e }} and odd=>{{ o }}
       </div>
-      <div *ngIf="o" style="background-color: white;">
-        {{i}} {{contact.firstName}}
-    </div>
+      <div *ngIf="o" style="background-color: white">
+        {{ i }} {{ contact.firstName }}
+      </div>
     </li>
   </ul>
 </div>
 
-                                <!-- *ngSwitch , *ngSwitchCase , *ngSwitchDefault -->
-                                 
+<!-- *ngSwitch , *ngSwitchCase , *ngSwitchDefault -->
+
 <h2>Learning ngSwitch</h2>
 
 <div [ngSwitch]="superPower">
-    <div *ngSwitchCase="'spiderMan'">Display spiderman superPower</div>
-    <div *ngSwitchCase="'superMan'">Display superMan superPower</div>
-    <div *ngSwitchCase="'batMan'">Display batMan superPower</div>
-    <div *ngSwitchCase="'hollowMan'">Display hollowMan superPower</div>
-    <div *ngSwitchDefault>none of the above</div>
+  <div *ngSwitchCase="'spiderMan'">Display spiderman superPower</div>
+  <div *ngSwitchCase="'superMan'">Display superMan superPower</div>
+  <div *ngSwitchCase="'batMan'">Display batMan superPower</div>
+  <div *ngSwitchCase="'hollowMan'">Display hollowMan superPower</div>
+  <div *ngSwitchDefault>none of the above</div>
 </div>
 
 <div [ngSwitch]="tax">
-    <div *ngSwitchCase="10"> tax more than 10</div>
-    <div *ngSwitchCase="30">tax less than 10</div>
-    <div *ngSwitchDefault>ngSwithDefault works</div>
+  <div *ngSwitchCase="10">tax more than 10</div>
+  <div *ngSwitchCase="30">tax less than 10</div>
+  <div *ngSwitchDefault>ngSwithDefault works</div>
 </div>
 
-                                <!-- attribute directive [ngStyle] and [ngClass] -->
+<!-- attribute directive [ngStyle] and [ngClass] -->
 
-<div [ngStyle]="{'background-color':'green', 'color':'white'}">This is green div element</div>
-<div [ngStyle]="{'background-color':violet}">This is violet div element</div>
-<div [ngStyle]="{'color':textColor=='blue'? 'blue':'red'}">woooo</div>
+<div [ngStyle]="{ 'background-color': 'green', color: 'white' }">
+  This is green div element
+</div>
+<div [ngStyle]="{ 'background-color': violet }">This is violet div element</div>
+<div [ngStyle]="{ color: textColor == 'blue' ? 'blue' : 'red' }">woooo</div>
 
 <div [ngClass]="'c1 c2'">This is ngClass example</div>
 <div [ngClass]="getClass()">return ngClass using method</div>
 
-
-
-<app-home></app-home> 
-<app-home2></app-home2><br><br>
-
+<app-home></app-home>
+<app-home2></app-home2><br /><br />
 
 <div class="container">
-  <input type="text" #inputEl>
-  <button class="btn btn-primary" (click)="onBtnClicked(inputEl)">Submit</button>
+  <input type="text" #inputEl />
+  <button class="btn btn-primary" (click)="onBtnClicked(inputEl)">
+    Submit
+  </button>
   <app-demo [message]="inputVal" *ngIf="!toDestroy">
     <!-- <p>This is projected content</p> -->
-    <p>User has entered following text: {{inputVal}}</p>
+    <p>User has entered following text: {{ inputVal }}</p>
   </app-demo>
-  <br><br>
-  <button class="btn btn-danger" (click)="DestroyComponent()">Show / Hide</button>
+  <br /><br />
+  <button class="btn btn-danger" (click)="DestroyComponent()">
+    Show / Hide
+  </button>
+</div><br><br>
+<h2>Reactive Forms</h2>
+<div class="container">
+  <form [formGroup]="reactiveForms" (ngSubmit)="OnSubmit()">
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault01">First name</label>
+        <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="Mark" formControlName="firstName" required>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault02">Last name</label>
+        <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="Otto" formControlName="lastName" required>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefaultUsername">Username</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend2">@</span>
+          </div>
+          <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" formControlName="userName" required>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationDefault03">City</label>
+        <input type="text" class="form-control" id="validationDefault03" placeholder="City" formControlName="city" required>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationDefault04">State</label>
+        <input type="text" class="form-control" id="validationDefault04" placeholder="State" formControlName="state" required>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationDefault05">Zip</label>
+        <input type="text" class="form-control" id="validationDefault05" placeholder="Zip" formControlName="zip" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" formControlName="terms" required>
+        <label class="form-check-label" for="invalidCheck2">
+          Agree to terms and conditions
+        </label>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit form</button>
+  </form>
 </div>
-<router-outlet></router-outlet>
+<br><br>
 
 <app-parent></app-parent>

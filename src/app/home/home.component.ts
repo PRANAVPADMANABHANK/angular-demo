@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../student.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
     age: 30
   }
   
-  constructor(private studentService: StudentService){
+  constructor(private studentService: StudentService, private router: Router){
     // console.log("home constructor")
   }
   
@@ -40,5 +41,9 @@ export class HomeComponent implements OnInit {
 
   calculate(student:any){
     this.studentService.calculateTotal(student)
+  }
+
+  gotoContact(){
+    this.router.navigate(['Contact-us'])
   }
 }   
