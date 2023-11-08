@@ -111,6 +111,11 @@
           </div>
           <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" formControlName="userName" required>
         </div>
+        <div>
+          <span style="color: red;" *ngIf="!reactiveForms.get('email').valid">
+            The user name is not valid
+          </span>
+        </div>
       </div>
     </div>
     <div class="form-row">
